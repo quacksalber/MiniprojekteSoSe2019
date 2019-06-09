@@ -1,4 +1,5 @@
 package MP3;
+
 /**
  * An array list to store strings.
  * 
@@ -10,7 +11,7 @@ public class ArrayStringList implements StringList {
 	 * The items in the list.
 	 */
 	private String[] items = new String[0];
-	
+
 	/**
 	 * Creates a new empty list.
 	 */
@@ -18,9 +19,22 @@ public class ArrayStringList implements StringList {
 		super();
 	}
 
+	public void getContentFromto(int from, int to, int pos) {
+		if (to >= items.length) {
+			return;
+		}
+		String[] itemsCopy = new String[items.length];
+
+		for (int i = from; from < to - 1; i++) {
+			itemsCopy[i] = items[i];
+		}
+
+	}
+
 	@Override
 	public void appendString(String text) {
 		// TODO: implement
+
 	}
 
 	@Override
@@ -44,7 +58,7 @@ public class ArrayStringList implements StringList {
 		// TODO: implement
 		return null;
 	}
-	
+
 	@Override
 	public String removeStringAt(int i) {
 		// TODO: implement
@@ -84,6 +98,5 @@ public class ArrayStringList implements StringList {
 	public String[] toStringArray() {
 		return new String[0];
 	}
-	
-	
+
 }
